@@ -74,7 +74,6 @@ const run = async (configs) => {
 
 // Grab the inputs and then run with them!
 core.debug('STARTING THE PARSE')
-console.log('ci-pipeline-fingerprints:', core.getInput('ci-pipeline-fingerprints'))
 Promise.resolve()
   .then(() => inputsToRegistryDocument())
   .then((configs) => {

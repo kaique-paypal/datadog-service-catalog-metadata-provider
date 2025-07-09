@@ -36888,7 +36888,6 @@ var run = async (configs) => {
   }
 };
 core.debug("STARTING THE PARSE");
-console.log("VALOR DO INPUT ci-pipeline-fingerprints:", core.getInput("ci-pipeline-fingerprints"));
 Promise.resolve().then(() => inputsToRegistryDocument()).then((configs) => {
   core.debug(`Input schema version is \xAB${core.getInput("schema-version")}\xBB`);
   core.debug(
