@@ -91,6 +91,19 @@ contacts: |
   })
 })
 
+describe('ci-pipeline-fingerprints', () => {
+  test('deve incluir o campo ci-pipeline-fingerprints quando fornecido', () => {
+    const testInput = {
+      'schema-version': 'v2.2',
+      'service-name': 'service-with-fingerprints',
+      'ci-pipeline-fingerprints': '["abc123", "def456"]',
+    }
+    core.__setInputsObject(testInput)
+    const inputs = subject._test.mapSchemaFields(core)
+    expect(inputs['ci-pipeline-fingerprints']).toEqual(['abc123', 'def456'])
+  })
+})
+
 describe('lib/schemaVersions/v2.2.cjs#mapInputs()', () => {
   test('#mapInputs() - Merging in some convenience fields', () => {
     const testInput = `

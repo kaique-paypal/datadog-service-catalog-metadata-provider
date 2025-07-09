@@ -32325,7 +32325,8 @@ var require_v2_2 = __commonJS({
         links: parseYamlExpectArray(core2.getInput("links")),
         tags: parseYamlExpectDatadogTags(core2.getInput("tags")),
         integrations: parseYamlExpectObject(core2.getInput("integrations")),
-        extensions: expandObjectInputs(core2.getInput("extensions"))
+        extensions: expandObjectInputs(core2.getInput("extensions")),
+        "ci-pipeline-fingerprints": parseYamlExpectArray(core2.getInput("ci-pipeline-fingerprints"))
       },
       isNothing
     );
@@ -36887,6 +36888,7 @@ var run = async (configs) => {
   }
 };
 core.debug("STARTING THE PARSE");
+console.log("VALOR DO INPUT ci-pipeline-fingerprints:", core.getInput("ci-pipeline-fingerprints"));
 Promise.resolve().then(() => inputsToRegistryDocument()).then((configs) => {
   core.debug(`Input schema version is \xAB${core.getInput("schema-version")}\xBB`);
   core.debug(
