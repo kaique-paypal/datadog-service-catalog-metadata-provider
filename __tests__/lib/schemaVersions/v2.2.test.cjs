@@ -15,6 +15,9 @@ type: function
 languages: |
   - javascript
   - markdown
+ci-pipeline-fingerprints: |
+  - 'abc123'
+  - 'def456'
 tier: p0
 lifecycle: production
 tags: |
@@ -88,19 +91,6 @@ contacts: |
     const inputs = subject._test.mapSchemaFields(core)
     expect(inputs).toMatchSnapshot()
     expect(inputs['dd-service']).toBeUndefined()
-  })
-})
-
-describe('ci-pipeline-fingerprints', () => {
-  test('deve incluir o campo ci-pipeline-fingerprints quando fornecido', () => {
-    const testInput = {
-      'schema-version': 'v2.2',
-      'service-name': 'service-with-fingerprints',
-      'ci-pipeline-fingerprints': '["abc123", "def456"]',
-    }
-    core.__setInputsObject(testInput)
-    const inputs = subject._test.mapSchemaFields(core)
-    expect(inputs['ci-pipeline-fingerprints']).toEqual(['abc123', 'def456'])
   })
 })
 
