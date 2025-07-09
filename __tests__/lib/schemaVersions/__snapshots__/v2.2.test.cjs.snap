@@ -50,6 +50,10 @@ exports[`lib/schemaVersions/v2.2.cjs#mapInputs() #mapInputs() - Merging in some 
 exports[`lib/schemaVersions/v2.2.cjs#mapSchemaFields() #mapSchemaFields() - Full schema fields set 1`] = `
 {
   "application": "Schema Version v2.2 Test",
+  "ci-pipeline-fingerprints": [
+    "abc123",
+    "def456",
+  ],
   "contacts": [
     {
       "contact": "dba-team-name-here@fakeemaildomainthatdoesntexist.com",
